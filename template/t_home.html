@@ -1,0 +1,48 @@
+<html>
+<head><title>恋曲1990</title></head>
+
+<link href="{{STATIC_URL}}dist/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="{{STATIC_URL}}lianqu1990/css/lianqu1990.css" rel="stylesheet" media="screen">
+<meta charset="utf-8"/>
+<body>
+
+<div id="nav">
+
+<ul class="nav nav-tabs">
+<li><a href="#">Home</a></li>
+<li><a href="#">Profile</a></li>
+<li><a href="#">Messages</a></li>
+</ul>
+
+<div>
+
+<div id="left_bar" class="bs-sidebar hidden-print affix">
+	<h3>有意思的网站</h3>
+</div>
+
+<div class="list-group" id="main">
+
+<form action="http://www.douban.com/search" method="get">
+       <input type="text" class="form-control" maxlength="60" size="12" title="书籍、电影、音乐、小组、小站、成员" name="q" autocomplete="off">
+       <button type="submit" class= "btn btn-primary">Search</button>
+</form>
+
+<div>
+{% for item in item_list %}
+
+<div>
+	<a href="{{ item.url }}" target="_black">{{item.title}}</a>
+	<p>{{item.summary}}</p>
+</div>
+
+{% endfor %}
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{STATIC_URL}}dist/js/bootstrap.js"></script>
+<script src="{{STATIC_URL}}lianqu1990/js/lianqu1990.js"></script>
+</body>
+</html>
